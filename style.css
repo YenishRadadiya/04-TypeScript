@@ -1,0 +1,207 @@
+/* Default Dark Theme */
+:root {
+  --bg-color: #f5efe7;
+  --text-color: #213555;
+  --btn-bg: #f5efe7;
+  --btn-shadow: #d8c4b6;
+  --header-bg: #f5efe7;
+  --header-text: #213555;
+  --container-bg: #3e5879;
+  --input-bg: #213555;
+  --input-text: #d8c4b6;
+  --equal-btn-bg: #008000;
+  --equal-btn-shadow: #355e3b;
+  --clear-btn-bg: #e23d28;
+  --clear-btn-shadow: #ff4500;
+  --toggle-bg: #fff;
+  --toggle-ball: #111;
+  --history-bg: #f5efe7;
+  --history-header-bg: #213555;
+  --history-text: #3e5879;
+}
+
+/* Light Theme */
+.light-theme {
+  --bg-color: #213555;
+  --text-color: #f5efe7;
+  --btn-bg: #3e5879;
+  --btn-shadow: #d8c4b6;
+  --header-bg: #213555;
+  --header-text: #f5efe7;
+  --container-bg: #f5efe7;
+  --input-bg: #f5efe7;
+  --input-text: #213555;
+  --equal-btn-bg: #1e7d22;
+  --equal-btn-shadow: #2d5e30;
+  --clear-btn-bg: #ff6347;
+  --clear-btn-shadow: #b22222;
+  --toggle-bg: #000;
+  --toggle-ball: #fff;
+  --history-bg: #3e5879;
+  --history-header-bg: #f5efe7;
+  --history-text: #f5efe7;
+}
+
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  background-color: var(--header-bg);
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px var(--btn-shadow);
+}
+
+.header span {
+  font-size: 60px;
+  color: var(--header-text);
+  text-decoration: double;
+  font-weight: 530;
+}
+
+/* Theme Toggle */
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: var(--toggle-bg);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-label .ball {
+  background-color: var(--toggle-ball);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--container-bg);
+}
+
+.content {
+  border: 2px solid var(--btn-shadow);
+  margin: 10px;
+}
+
+.content .calc_buttons button:not(.checkbox) {
+  border: 0;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: var(--btn-bg);
+  box-shadow: 2px 2px 1px var(--btn-shadow);
+  font-size: 20px;
+  cursor: pointer;
+  margin: 2%;
+}
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content input[type="text"] {
+  height: 70px;
+  width: 400px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: var(--input-text);
+  cursor: text;
+  background-color: var(--input-bg);
+  box-shadow: 5px 5px 10px var(--container-bg);
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+/* Buttons */
+.content .calc_buttons button[value="="] {
+  background-color: var(--equal-btn-bg);
+  box-shadow: 2px 2px 1px var(--equal-btn-shadow);
+}
+
+.content .calc_buttons button[value="C"] {
+  background-color: var(--clear-btn-bg);
+  box-shadow: 2px 2px 1px var(--clear-btn-shadow);
+}
+.btn_clr_history {
+  border: 0;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: var(--btn-shadow);
+  box-shadow: 2px 2px 1px var(--btn-bg);
+  font-size: 20px;
+  cursor: pointer;
+  margin: 2%;
+}
+
+/* History Section */
+#display_history {
+  height: 60vh;
+  width: 20%;
+  background-color: var(--history-bg);
+  display: none;
+}
+
+#history_header {
+  display: flex;
+  justify-content: space-between;
+  border: 5px solid var(--history-header-bg);
+}
+
+#history_content p {
+  font-size: large;
+  color: var(--history-text);
+}
+
+/* Responsive Design */
+@media (max-width: 460px) and (max-height: 730px) {
+  .content .calc_buttons button:not(.checkbox) {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 1%;
+  }
+
+  .content input[type="text"] {
+    height: 10%;
+    width: 100%;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 5px var(--container-bg);
+  }
+}

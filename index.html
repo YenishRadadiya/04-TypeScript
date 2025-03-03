@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="icon" type="image/x-icon" href="assets/calculator.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script defer type="module" src="script.js"></script>
+    <script defer type="module" src="util/history.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header"><span>Calculator</span></div>
+    <!-- Calculator body -->
+
+    <div class="container">
+        <div class="content" id="calc_content">
+            <!-- Theme Changer -->
+
+            <div class="calc-header" id="calc-header">
+                <!-- for checkbox value=true means light mode -->
+                <input type="checkbox" class="checkbox" id="checkbox" value="true" />
+                <label for="checkbox" class="checkbox-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                </label>
+                <button id="btn-history" class="btn-history">
+                    <i class="fa fa-history" style="font-size: 36px; background-color: #3e5879; color: #213555"></i>
+                </button>
+            </div>
+
+            <!-- Display Field -->
+            <div class="text-field">
+                <input type="text" id="display" />
+            </div>
+
+            <div class="container_calc">
+                <!-- Row -1 -->
+                <div class="calc_buttons">
+                    <button class="data-opreations_so" value="log">log</button>
+                    <button class="data-opreations" value="pi">π</button>
+                    <button class="data-opreations" value="e">e</button>
+                    <button class="data-opreations" value="^">xʸ</button>
+                    <button value="C" class="clear">C</button>
+                </div>
+
+                <!-- Row -2 -->
+                <div class="calc_buttons">
+                    <button class="data-opreations_so" value="sqrt">√</button>
+                    <button class="data-opreations" value="(">(</button>
+                    <button class="data-opreations" value=")">)</button>
+                    <button class="data-opreations" value="/">/</button>
+                    <button class="back_space" value="back_space">⌫</button>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="calc_buttons">
+                    <button class="data-opreations" value="%">%</button>
+                    <button class="data-number" value="7">7</button>
+                    <button class="data-number" value="8">8</button>
+                    <button class="data-number" value="9">9</button>
+                    <button class="data-opreations" value="*">*</button>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="calc_buttons">
+                    <button class="data-opreations_so" value="sin">sin</button>
+                    <button class="data-number" value="4">4</button>
+                    <button class="data-number" value="5">5</button>
+                    <button class="data-number" value="6">6</button>
+                    <button class="data-opreations" value="-">-</button>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="calc_buttons">
+                    <button class="data-opreations_so" value="cos">cos</button>
+                    <button class="data-number" value="1">1</button>
+                    <button class="data-number" value="2">2</button>
+                    <button class="data-number" value="3">3</button>
+                    <button class="data-opreations" value="+">+</button>
+                </div>
+
+                <!-- Row 6 -->
+                <div class="calc_buttons">
+                    <button class="data-opreations_so" value="tan">tan</button>
+                    <button class="data-opreations_sc" id="operation_sc" value="-">±</button>
+                    <button class="data-number" value="0">0</button>
+                    <button class="data-number" value=".">.</button>
+                    <button class="eqals" value="=">=</button>
+                </div>
+            </div>
+        </div>
+        <div id="display_history">
+            <div id="history_header">
+                <button class="btn_clr_history">Clear</button>
+            </div>
+            <div id="history_content"></div>
+        </div>
+    </div>
+</body>
+
+</html>
